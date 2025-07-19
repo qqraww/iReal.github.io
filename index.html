@@ -15,9 +15,33 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
       :where([class^="ri-"])::before {
       content: "\f3c2";
+      }
+      /* Кастомные стрелки для Swiper */
+      .swiper-button-next, .swiper-button-prev {
+        width: 40px;
+        height: 40px;
+        background: rgba(255,255,255,0.85);
+        border-radius: 9999px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s, box-shadow 0.2s;
+        color: #007AFF;
+        font-size: 24px;
+      }
+      .swiper-button-next:hover, .swiper-button-prev:hover {
+        background: #007AFF;
+        color: #fff;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      }
+      /* Скрыть стандартные SVG-стрелки Swiper */
+      .swiper-button-next::after, .swiper-button-prev::after {
+        display: none;
       }
     </style>
     <script>
@@ -127,12 +151,15 @@
             <div
               class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
             >
-              <div class="aspect-square bg-gray-50 p-8">
-                <img
-                  src="https://readdy.ai/api/search-image?query=iPhone%20X%20white%20color%20256GB%20original%20apple%20device%20perfectly%20centered%20on%20pure%20white%20background%20professional%20product%20photography%20straight%20front%20view%20premium%20quality%20minimalist%20style&width=400&height=400&seq=iphonex2&orientation=squarish"
-                  alt="iPhone X"
-                  class="w-full h-full object-contain object-center"
-                />
+              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="iphoneX-1.png" alt="iPhone X" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphoneX-2.png" alt="iPhone X" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphoneX-3.png" alt="iPhone X" class="w-full h-full object-contain object-center" /></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
+                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-bold text-gray-900 mb-3">iPhone X</h3>
@@ -179,12 +206,15 @@
             <div
               class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
             >
-              <div class="aspect-square bg-gray-50 p-8">
-                <img
-                  src="https://readdy.ai/api/search-image?query=iPhone%2011%20black%20color%20256GB%20original%20apple%20device%20perfectly%20centered%20on%20pure%20white%20background%20professional%20product%20photography%20straight%20front%20view%20premium%20quality%20minimalist%20style&width=400&height=400&seq=iphone112&orientation=squarish"
-                  alt="iPhone 11"
-                  class="w-full h-full object-contain object-center"
-                />
+              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="iphone11-1.png" alt="iPhone 11" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone11-2.png" alt="iPhone 11" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone11-3.png" alt="iPhone 11" class="w-full h-full object-contain object-center" /></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
+                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-bold text-gray-900 mb-3">iPhone 11</h3>
@@ -231,12 +261,15 @@
             <div
               class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
             >
-              <div class="aspect-square bg-gray-50 p-8">
-                <img
-                  src="https://readdy.ai/api/search-image?query=iPhone%2012%20black%20color%20256GB%20original%20apple%20device%20perfectly%20centered%20on%20pure%20white%20background%20professional%20product%20photography%20straight%20front%20view%20premium%20quality%20minimalist%20style&width=400&height=400&seq=iphone122&orientation=squarish"
-                  alt="iPhone 12"
-                  class="w-full h-full object-contain object-center"
-                />
+              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="iphone12-1.png" alt="iPhone 12" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone12-2.png" alt="iPhone 12" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone12-3.png" alt="iPhone 12" class="w-full h-full object-contain object-center" /></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
+                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-bold text-gray-900 mb-3">iPhone 12</h3>
@@ -283,12 +316,15 @@
             <div
               class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
             >
-              <div class="aspect-square bg-gray-50 p-8">
-                <img
-                  src="https://readdy.ai/api/search-image?query=iPhone%2013%20white%20color%20256GB%20original%20apple%20device%20perfectly%20centered%20on%20pure%20white%20background%20professional%20product%20photography%20straight%20front%20view%20premium%20quality%20minimalist%20style&width=400&height=400&seq=iphone132&orientation=squarish"
-                  alt="iPhone 13"
-                  class="w-full h-full object-contain object-center"
-                />
+              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="iphone13-1.png" alt="iPhone 13" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone13-2.png" alt="iPhone 13" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone13-3.png" alt="iPhone 13" class="w-full h-full object-contain object-center" /></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
+                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-bold text-gray-900 mb-3">iPhone 13</h3>
@@ -335,12 +371,15 @@
             <div
               class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
             >
-              <div class="aspect-square bg-gray-50 p-8">
-                <img
-                  src="https://readdy.ai/api/search-image?query=iPhone%2014%20black%20color%20128GB%20original%20apple%20device%20perfectly%20centered%20on%20pure%20white%20background%20professional%20product%20photography%20straight%20front%20view%20premium%20quality%20minimalist%20style%20clear%20detailed%20shot&width=400&height=400&seq=iphone143&orientation=squarish"
-                  alt="iPhone 14"
-                  class="w-full h-full object-contain object-center"
-                />
+              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="iphone14-1.png" alt="iPhone 14" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone14-2.png" alt="iPhone 14" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone14-3.png" alt="iPhone 14" class="w-full h-full object-contain object-center" /></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
+                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-bold text-gray-900 mb-3">iPhone 14</h3>
@@ -387,12 +426,15 @@
             <div
               class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
             >
-              <div class="aspect-square bg-gray-50 p-8">
-                <img
-                  src="https://readdy.ai/api/search-image?query=iPhone%2015%20pink%20color%20256GB%20original%20apple%20device%20clean%20white%20background%20professional%20product%20photography%20minimal%20style%20high%20quality%20premium%20look&width=400&height=400&seq=iphone151&orientation=squarish"
-                  alt="iPhone 15"
-                  class="w-full h-full object-contain object-center"
-                />
+              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="iphone15-1.png" alt="iPhone 15" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone15-2.png" alt="iPhone 15" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone15-3.png" alt="iPhone 15" class="w-full h-full object-contain object-center" /></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
+                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-bold text-gray-900 mb-3">iPhone 15</h3>
@@ -439,12 +481,15 @@
             <div
               class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
             >
-              <div class="aspect-square bg-gray-50 p-8">
-                <img
-                  src="https://readdy.ai/api/search-image?query=iPhone%2016%20dark%20color%20256GB%20original%20apple%20device%20perfectly%20centered%20on%20pure%20white%20background%20professional%20product%20photography%20straight%20front%20view%20premium%20quality%20minimalist%20style%20clear%20detailed%20shot&width=400&height=400&seq=iphone163&orientation=squarish"
-                  alt="iPhone 16"
-                  class="w-full h-full object-contain object-center"
-                />
+              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="iphone16-1.png" alt="iPhone 16" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone16-2.png" alt="iPhone 16" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone16-3.png" alt="iPhone 16" class="w-full h-full object-contain object-center" /></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
+                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-bold text-gray-900 mb-3">iPhone 16</h3>
@@ -491,12 +536,15 @@
             <div
               class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
             >
-              <div class="aspect-square bg-gray-50 p-8">
-                <img
-                  src="https://readdy.ai/api/search-image?query=AirPods%20Pro%202%20white%20color%20original%20apple%20earphones%20with%20charging%20case%20perfectly%20centered%20on%20pure%20white%20background%20professional%20product%20photography%20straight%20front%20view%20premium%20quality%20minimalist%20style&width=400&height=400&seq=airpods2&orientation=squarish"
-                  alt="AirPods Pro 2"
-                  class="w-full h-full object-contain object-center"
-                />
+              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="airpodspro2-1.png" alt="AirPods Pro 2" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="airpodspro2-2.png" alt="AirPods Pro 2" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="airpodspro2-3.png" alt="AirPods Pro 2" class="w-full h-full object-contain object-center" /></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
+                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
               </div>
               <div class="p-6">
                 <h3 class="text-xl font-bold text-gray-900 mb-3">
@@ -693,6 +741,21 @@
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, "_blank");
       }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      document.querySelectorAll('.product-swiper').forEach(function(swiperEl) {
+        new Swiper(swiperEl, {
+          loop: true,
+          pagination: { el: swiperEl.querySelector('.swiper-pagination'), clickable: true },
+          navigation: {
+            nextEl: swiperEl.querySelector('.swiper-button-next'),
+            prevEl: swiperEl.querySelector('.swiper-button-prev'),
+          },
+          slidesPerView: 1,
+          spaceBetween: 0,
+        });
+      });
     </script>
   </body>
 </html>
