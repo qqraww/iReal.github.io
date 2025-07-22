@@ -1,761 +1,1231 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>iReal - Оригинальные iPhone и аксессуары Apple</title>
-    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
-    />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <style>
-      :where([class^="ri-"])::before {
-      content: "\f3c2";
-      }
-      /* Кастомные стрелки для Swiper */
-      .swiper-button-next, .swiper-button-prev {
-        width: 40px;
-        height: 40px;
-        background: rgba(255,255,255,0.85);
-        border-radius: 9999px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: background 0.2s, box-shadow 0.2s;
-        color: #007AFF;
-        font-size: 24px;
-      }
-      .swiper-button-next:hover, .swiper-button-prev:hover {
-        background: #007AFF;
-        color: #fff;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-      }
-      /* Скрыть стандартные SVG-стрелки Swiper */
-      .swiper-button-next::after, .swiper-button-prev::after {
-        display: none;
-      }
-    </style>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#007AFF",
-              secondary: "#34C759",
-            },
-            borderRadius: {
-              none: "0px",
-              sm: "4px",
-              DEFAULT: "8px",
-              md: "12px",
-              lg: "16px",
-              xl: "20px",
-              "2xl": "24px",
-              "3xl": "32px",
-              full: "9999px",
-              button: "8px",
-            },
-          },
-        },
-      };
-    </script>
-  </head>
-  <body class="bg-gray-50">
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-          <div class="flex items-center">
-            <h1 class="text-2xl font-['Pacifico'] text-primary">iReal</h1>
-          </div>
-          <nav class="hidden md:flex space-x-8">
-            <a
-              href="#products"
-              class="text-gray-700 hover:text-primary transition-colors"
-              >Товары</a
-            >
-            <a
-              href="#about"
-              class="text-gray-700 hover:text-primary transition-colors"
-              >О нас</a
-            >
-            <a
-              href="#contact"
-              class="text-gray-700 hover:text-primary transition-colors"
-              >Контакты</a
-            >
-          </nav>
-          <div class="flex items-center space-x-4">
-            <div class="flex items-center text-gray-700">
-              <div class="w-5 h-5 flex items-center justify-center mr-2">
-                <i class="ri-phone-line text-primary"></i>
-              </div>
-              <span class="font-medium">+7 989 898-20-42</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <main>
-      <section
-        class="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-20 overflow-hidden"
-        style="background-image: url('https://readdy.ai/api/search-image?query=modern%20minimalist%20tech%20store%20background%20with%20iphone%20devices%20floating%20in%20clean%20white%20space%20professional%20lighting%20soft%20shadows%20premium%20technology%20atmosphere%20blue%20and%20white%20color%20scheme%20left%20side%20empty%20for%20text%20right%20side%20with%20elegant%20iphone%20display&width=1920&height=800&seq=hero1&orientation=landscape'); background-size: cover; background-position: center;"
-      >
-        <div class="absolute inset-0 bg-white bg-opacity-80"></div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="w-full">
-            <div class="max-w-2xl">
-              <h1 class="text-5xl font-bold text-gray-900 mb-6">
-                Оригинальные iPhone<br />
-                <span class="text-primary">по лучшим ценам</span>
-              </h1>
-              <p class="text-xl text-gray-600 mb-8">
-                Гарантированно оригинальная техника Apple с гарантией до 12
-                месяцев. Экономьте до 30% от розничных цен.
-              </p>
-              <div class="flex flex-col sm:flex-row gap-4">
-                <button
-                  onclick="scrollToProducts()"
-                  class="bg-primary text-white px-8 py-4 !rounded-button font-semibold hover:bg-blue-600 transition-colors whitespace-nowrap"
-                >
-                  Посмотреть товары
-                </button>
-                <a
-                  href="https://wa.me/79898982042?text=Здравствуйте,%20хочу%20узнать%20подробности%20о%20ваших%20товарах"
-                  class="border-2 border-primary text-primary px-8 py-4 !rounded-button font-semibold hover:bg-primary hover:text-white transition-colors text-center whitespace-nowrap"
-                >
-                  Связаться в WhatsApp
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="products" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Наши товары</h2>
-            <p class="text-lg text-gray-600">
-              Только оригинальная техника Apple с официальной гарантией
-            </p>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div
-              class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
-            >
-              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img src="iphoneX-1.png" alt="iPhone X" class="w-full h-full object-contain object-center" /></div>
-                  <div class="swiper-slide"><img src="iphoneX-2.png" alt="iPhone X" class="w-full h-full object-contain object-center" /></div>
-                  <div class="swiper-slide"><img src="iphoneX-3.png" alt="iPhone X" class="w-full h-full object-contain object-center" /></div>
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
-                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-900 mb-3">iPhone X</h3>
-                <div class="space-y-2 mb-4">
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-palette-line"></i>
-                    </div>
-                    <span>Цвет: белый</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-database-line"></i>
-                    </div>
-                    <span>Память: 256 ГБ</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-star-line"></i>
-                    </div>
-                    <span>Состояние: отличное, без эксплуатации</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-shield-check-line"></i>
-                    </div>
-                    <span>Гарантия: до 12 месяцев</span>
-                  </div>
-                </div>
-                <div class="mb-4">
-                  <div class="text-2xl font-bold text-gray-900">13 836 ₽</div>
-                  <div class="text-sm text-gray-500 line-through">
-                    18 700 ₽ — в розничных точках
-                  </div>
-                </div>
-                <button
-                  onclick="buyProduct('iPhone X')"
-                  class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-600 transition-colors whitespace-nowrap"
-                >
-                  Купить в WhatsApp
-                </button>
-              </div>
-            </div>
-            <div
-              class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
-            >
-              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img src="iphone11-1.png" alt="iPhone 11" class="w-full h-full object-contain object-center" /></div>
-                  <div class="swiper-slide"><img src="iphone11-2.png" alt="iPhone 11" class="w-full h-full object-contain object-center" /></div>
-                  <div class="swiper-slide"><img src="iphone11-3.png" alt="iPhone 11" class="w-full h-full object-contain object-center" /></div>
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
-                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-900 mb-3">iPhone 11</h3>
-                <div class="space-y-2 mb-4">
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-palette-line"></i>
-                    </div>
-                    <span>Цвет: чёрный</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-database-line"></i>
-                    </div>
-                    <span>Память: 256 ГБ</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-star-line"></i>
-                    </div>
-                    <span>Состояние: отличное, не тронутый</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-shield-check-line"></i>
-                    </div>
-                    <span>Гарантия: до 12 месяцев</span>
-                  </div>
-                </div>
-                <div class="mb-4">
-                  <div class="text-2xl font-bold text-gray-900">19 983 ₽</div>
-                  <div class="text-sm text-gray-500 line-through">
-                    23 617 ₽ — у других продавцов
-                  </div>
-                </div>
-                <button
-                  onclick="buyProduct('iPhone 11')"
-                  class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-600 transition-colors whitespace-nowrap"
-                >
-                  Купить в WhatsApp
-                </button>
-              </div>
-            </div>
-            <div
-              class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
-            >
-              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img src="iphone12-1.png" alt="iPhone 12" class="w-full h-full object-contain object-center" /></div>
-                  <div class="swiper-slide"><img src="iphone12-2.png" alt="iPhone 12" class="w-full h-full object-contain object-center" /></div>
-                  <div class="swiper-slide"><img src="iphone12-3.png" alt="iPhone 12" class="w-full h-full object-contain object-center" /></div>
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
-                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-900 mb-3">iPhone 12</h3>
-                <div class="space-y-2 mb-4">
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-palette-line"></i>
-                    </div>
-                    <span>Цвет: чёрный</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-database-line"></i>
-                    </div>
-                    <span>Память: 256 ГБ</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-star-line"></i>
-                    </div>
-                    <span>Состояние: как новый</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-shield-check-line"></i>
-                    </div>
-                    <span>Гарантия: до 12 месяцев</span>
-                  </div>
-                </div>
-                <div class="mb-4">
-                  <div class="text-2xl font-bold text-gray-900">23 832 ₽</div>
-                  <div class="text-sm text-gray-500 line-through">
-                    29 636 ₽ — в маркетплейсах
-                  </div>
-                </div>
-                <button
-                  onclick="buyProduct('iPhone 12')"
-                  class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-600 transition-colors whitespace-nowrap"
-                >
-                  Купить в WhatsApp
-                </button>
-              </div>
-            </div>
-            <div
-              class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
-            >
-              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img src="iphone13-1.png" alt="iPhone 13" class="w-full h-full object-contain object-center" /></div>
-                  <div class="swiper-slide"><img src="iphone13-2.png" alt="iPhone 13" class="w-full h-full object-contain object-center" /></div>
-                  <div class="swiper-slide"><img src="iphone13-3.png" alt="iPhone 13" class="w-full h-full object-contain object-center" /></div>
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
-                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-900 mb-3">iPhone 13</h3>
-                <div class="space-y-2 mb-4">
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-palette-line"></i>
-                    </div>
-                    <span>Цвет: белый</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-database-line"></i>
-                    </div>
-                    <span>Память: 256 ГБ</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-star-line"></i>
-                    </div>
-                    <span>Состояние: отличное, прямо с завода</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-shield-check-line"></i>
-                    </div>
-                    <span>Гарантия: до 12 месяцев</span>
-                  </div>
-                </div>
-                <div class="mb-4">
-                  <div class="text-2xl font-bold text-gray-900">36 778 ₽</div>
-                  <div class="text-sm text-gray-500 line-through">
-                    54 990 ₽ — средняя цена по рынку
-                  </div>
-                </div>
-                <button
-                  onclick="buyProduct('iPhone 13')"
-                  class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-600 transition-colors whitespace-nowrap"
-                >
-                  Купить в WhatsApp
-                </button>
-              </div>
-            </div>
-            <div
-              class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
-            >
-              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img src="iphone14-1.png" alt="iPhone 14" class="w-full h-full object-contain object-center" /></div>
-                  <div class="swiper-slide"><img src="iphone14-2.png" alt="iPhone 14" class="w-full h-full object-contain object-center" /></div>
-                  <div class="swiper-slide"><img src="iphone14-3.png" alt="iPhone 14" class="w-full h-full object-contain object-center" /></div>
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
-                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-900 mb-3">iPhone 14</h3>
-                <div class="space-y-2 mb-4">
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-palette-line"></i>
-                    </div>
-                    <span>Цвет: чёрный</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-database-line"></i>
-                    </div>
-                    <span>Память: 128 ГБ</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-star-line"></i>
-                    </div>
-                    <span>Состояние: как с витрины</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-shield-check-line"></i>
-                    </div>
-                    <span>Гарантия: до 12 месяцев</span>
-                  </div>
-                </div>
-                <div class="mb-4">
-                  <div class="text-2xl font-bold text-gray-900">38 273 ₽</div>
-                  <div class="text-sm text-gray-500 line-through">
-                    49 464 ₽ — в торговых точках
-                  </div>
-                </div>
-                <button
-                  onclick="buyProduct('iPhone 14')"
-                  class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-600 transition-colors whitespace-nowrap"
-                >
-                  Купить в WhatsApp
-                </button>
-              </div>
-            </div>
-            <div
-              class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
-            >
-              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img src="iphone15-1.png" alt="iPhone 15" class="w-full h-full object-contain object-center" /></div>
-                  <div class="swiper-slide"><img src="iphone15-2.png" alt="iPhone 15" class="w-full h-full object-contain object-center" /></div>
-                  <div class="swiper-slide"><img src="iphone15-3.png" alt="iPhone 15" class="w-full h-full object-contain object-center" /></div>
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
-                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-900 mb-3">iPhone 15</h3>
-                <div class="space-y-2 mb-4">
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-palette-line"></i>
-                    </div>
-                    <span>Цвет: розовый</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-database-line"></i>
-                    </div>
-                    <span>Память: 256 ГБ</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-star-line"></i>
-                    </div>
-                    <span>Состояние: новый, отлично выглядит</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-shield-check-line"></i>
-                    </div>
-                    <span>Гарантия: до 12 месяцев</span>
-                  </div>
-                </div>
-                <div class="mb-4">
-                  <div class="text-2xl font-bold text-gray-900">52 384 ₽</div>
-                  <div class="text-sm text-gray-500 line-through">
-                    64 132 ₽ — у других продавцов
-                  </div>
-                </div>
-                <button
-                  onclick="buyProduct('iPhone 15')"
-                  class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-600 transition-colors whitespace-nowrap"
-                >
-                  Купить в WhatsApp
-                </button>
-              </div>
-            </div>
-            <div
-              class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
-            >
-              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img src="iphone16-1.png" alt="iPhone 16" class="w-full h-full object-contain object-center" /></div>
-                  <div class="swiper-slide"><img src="iphone16-2.png" alt="iPhone 16" class="w-full h-full object-contain object-center" /></div>
-                  <div class="swiper-slide"><img src="iphone16-3.png" alt="iPhone 16" class="w-full h-full object-contain object-center" /></div>
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
-                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-900 mb-3">iPhone 16</h3>
-                <div class="space-y-2 mb-4">
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-palette-line"></i>
-                    </div>
-                    <span>Цвет: тёмный</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-database-line"></i>
-                    </div>
-                    <span>Память: 256 ГБ</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-star-line"></i>
-                    </div>
-                    <span>Состояние: новый, без следов</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-shield-check-line"></i>
-                    </div>
-                    <span>Гарантия: до 12 месяцев</span>
-                  </div>
-                </div>
-                <div class="mb-4">
-                  <div class="text-2xl font-bold text-gray-900">78 983 ₽</div>
-                  <div class="text-sm text-gray-500 line-through">
-                    81 589 ₽ — в розничных сетях
-                  </div>
-                </div>
-                <button
-                  onclick="buyProduct('iPhone 16')"
-                  class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-600 transition-colors whitespace-nowrap"
-                >
-                  Купить в WhatsApp
-                </button>
-              </div>
-            </div>
-            <div
-              class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
-            >
-              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide"><img src="airpodspro2-1.png" alt="AirPods Pro 2" class="w-full h-full object-contain object-center" /></div>
-                  <div class="swiper-slide"><img src="airpodspro2-2.png" alt="AirPods Pro 2" class="w-full h-full object-contain object-center" /></div>
-                  <div class="swiper-slide"><img src="airpodspro2-3.png" alt="AirPods Pro 2" class="w-full h-full object-contain object-center" /></div>
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
-                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-900 mb-3">
-                  AirPods Pro 2
-                </h3>
-                <div class="space-y-2 mb-4">
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-palette-line"></i>
-                    </div>
-                    <span>Цвет: белый</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-battery-line"></i>
-                    </div>
-                    <span>Кейс: 520 mAh, зарядка 50 мин</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-headphone-line"></i>
-                    </div>
-                    <span>Наушники: зарядка 15 мин</span>
-                  </div>
-                  <div class="flex items-center text-sm text-gray-600">
-                    <div class="w-4 h-4 flex items-center justify-center mr-2">
-                      <i class="ri-star-line"></i>
-                    </div>
-                    <span>Состояние: оригинальные</span>
-                  </div>
-                </div>
-                <div class="mb-4">
-                  <div class="text-2xl font-bold text-gray-900">6 898 ₽</div>
-                  <div class="text-sm text-gray-500 line-through">
-                    24 599 ₽ — в официальных магазинах
-                  </div>
-                </div>
-                <button
-                  onclick="buyProduct('AirPods Pro 2')"
-                  class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-600 transition-colors whitespace-nowrap"
-                >
-                  Купить в WhatsApp
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="about" class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">
-              Почему выбирают нас
-            </h2>
-            <p class="text-lg text-gray-600">
-              Мы гарантируем качество и надёжность каждого устройства
-            </p>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="text-center">
-              <div
-                class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4"
-              >
-                <div class="w-8 h-8 flex items-center justify-center">
-                  <i class="ri-shield-check-line text-primary text-2xl"></i>
-                </div>
-              </div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                100% оригинал
-              </h3>
-              <p class="text-gray-600">
-                Только оригинальная техника Apple с официальной гарантией до 12
-                месяцев
-              </p>
-            </div>
-            <div class="text-center">
-              <div
-                class="w-16 h-16 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4"
-              >
-                <div class="w-8 h-8 flex items-center justify-center">
-                  <i class="ri-price-tag-line text-secondary text-2xl"></i>
-                </div>
-              </div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                Лучшие цены
-              </h3>
-              <p class="text-gray-600">
-                Экономьте до 30% от розничных цен без потери качества
-              </p>
-            </div>
-            <div class="text-center">
-              <div
-                class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4"
-              >
-                <div class="w-8 h-8 flex items-center justify-center">
-                  <i class="ri-customer-service-line text-primary text-2xl"></i>
-                </div>
-              </div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                Быстрая связь
-              </h3>
-              <p class="text-gray-600">
-                Оперативная консультация и оформление заказа через WhatsApp
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="py-16 bg-primary">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 class="text-3xl font-bold text-white mb-4">
-            Готовы сделать заказ?
-          </h2>
-          <p class="text-xl text-blue-100 mb-8">
-            Свяжитесь с нами в WhatsApp для быстрого оформления
-          </p>
-          <a
-            href="https://wa.me/79898982042?text=Здравствуйте,%20хочу%20узнать%20подробности%20о%20ваших%20товарах"
-            class="inline-flex items-center bg-white text-primary px-8 py-4 !rounded-button font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap"
-          >
-            <div class="w-6 h-6 flex items-center justify-center mr-3">
-              <i class="ri-whatsapp-line text-xl"></i>
-            </div>
-            Написать в WhatsApp
-          </a>
-        </div>
-      </section>
-    </main>
-    <footer id="contact" class="bg-gray-900 text-white py-12">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 class="text-xl font-['Pacifico'] text-primary mb-4">iReal</h3>
-            <p class="text-gray-300 mb-4">
-              Оригинальная техника Apple по доступным ценам с гарантией
-              качества.
-            </p>
-            <div class="flex space-x-4">
-              <a
-                href="https://wa.me/79898982042"
-                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors"
-              >
-                <div class="w-5 h-5 flex items-center justify-center">
-                  <i class="ri-whatsapp-line"></i>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div>
-            <h4 class="text-lg font-semibold mb-4">Контакты</h4>
-            <div class="space-y-2">
-              <div class="flex items-center text-gray-300">
-                <div class="w-5 h-5 flex items-center justify-center mr-3">
-                  <i class="ri-phone-line"></i>
-                </div>
-                <span>+7 989 898-20-42</span>
-              </div>
-              <div class="flex items-center text-gray-300">
-                <div class="w-5 h-5 flex items-center justify-center mr-3">
-                  <i class="ri-whatsapp-line"></i>
-                </div>
-                <span>WhatsApp: +7 989 898-20-42</span>
-              </div>
-            </div>
-          </div>
-          <div>
-            <h4 class="text-lg font-semibold mb-4">Гарантии</h4>
-            <ul class="space-y-2 text-gray-300">
-              <li>• Гарантия до 12 месяцев</li>
-              <li>• 100% оригинальная техника</li>
-              <li>• Проверка перед отправкой</li>
-              <li>• Техническая поддержка</li>
-            </ul>
-          </div>
-        </div>
-        <div
-          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
-        >
-          <p>&copy; 2025 iReal. Все права защищены.</p>
-        </div>
-      </div>
-    </footer>
-    <script id="navigation">
-      function scrollToProducts() {
-        document.getElementById("products").scrollIntoView({
-          behavior: "smooth",
-        });
-      }
-    </script>
-    <script id="whatsapp-integration">
-      function buyProduct(productName) {
-        const phoneNumber = "79898982042";
-        const message = `Здравствуйте, хочу купить ${productName}`;
-        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, "_blank");
-      }
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-      document.querySelectorAll('.product-swiper').forEach(function(swiperEl) {
-        new Swiper(swiperEl, {
-          loop: true,
-          pagination: { el: swiperEl.querySelector('.swiper-pagination'), clickable: true },
-          navigation: {
-            nextEl: swiperEl.querySelector('.swiper-button-next'),
-            prevEl: swiperEl.querySelector('.swiper-button-prev'),
-          },
-          slidesPerView: 1,
-          spaceBetween: 0,
-        });
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iReal Market Store - Магазин iPhone</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#C0C0C0',
+secondary: '#C0C0C0'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+};
+</script>
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.search-input:focus {
+  outline: none;
+  border-color: #C0C0C0;
+}
+.product-card {
+  animation: fadeIn 0.8s ease-out forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  /* box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1); */
+  /* background-color: #000000; */
+}
+.whatsapp-button:hover {
+  transform: scale(1.05);
+}
+.section-heading {
+  position: relative;
+  display: inline-block;
+}
+.section-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: #C0C0C0;
+}
+.filter-active {
+  background-color: #C0C0C0;
+  color: #ffffff;
+  font-weight: 500;
+}
+.mobile-menu {
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+}
+.mobile-menu.active {
+  transform: translateX(0);
+}
+.hamburger-line {
+  width: 24px;
+  height: 2px;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+@media (max-width: 640px) {
+  .filter-select {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+.buy-btn:hover {
+  background-color: #262626;
+}
+.silver-divider {
+  border-top: 1px solid #C0C0C0;
+  opacity: 0.7;
+  margin: 2rem 0;
+}
+.product-card img {
+  padding-top: 24px;
+}
+.filter-select {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 0.5rem;
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  appearance: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.filter-select:focus {
+  outline: none;
+  border-color: #C0C0C0;
+  box-shadow: 0 0 0 2px #C0C0C0;
+}
+</style>
+</head>
+<body class="bg-black">
+<header class="fixed top-0 left-0 right-0 bg-black shadow-sm z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<div class="flex items-center">
+<button id="hamburger" class="md:hidden mr-4 flex flex-col space-y-2 hamburger">
+<span class="hamburger-line"></span>
+<span class="hamburger-line"></span>
+<span class="hamburger-line"></span>
+</button>
+<a href="#" class="font-['Pacifico'] text-2xl text-white"><img src="logo.jpg" alt="iReal Logo" class="h-8 inline-block"></a>
+</div>
+<nav class="hidden md:flex space-x-8">
+<a href="#iphone" class="text-gray-300 hover:text-primary">iPhone</a>
+<a href="#accessories" class="text-gray-300 hover:text-primary">Аксессуары</a>
+<a href="#about" class="text-gray-300 hover:text-primary">О нас</a>
+<a href="#contacts" class="text-gray-300 hover:text-primary">Контакты</a>
+</nav>
+<div class="flex items-center space-x-6">
+<div class="relative hidden md:block" id="catalogSearchBlock">
+  <input id="catalogSearchInput" type="text" class="search-input w-64 pl-10 pr-4 py-2 rounded-full bg-gray-50 border border-gray-200 text-sm text-gray-900" placeholder="Поиск по каталогу..." autocomplete="off">
+  <div class="absolute left-3 top-2.5 text-gray-400 w-5 h-5 flex items-center justify-center pointer-events-none">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+    </svg>
+  </div>
+  <div id="searchDropdown" class="hidden absolute left-0 mt-2 w-full bg-white border border-[#C0C0C0] rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto"></div>
+</div>
+</div>
+</div>
+</div>
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="fixed top-16 left-0 bottom-0 w-64 bg-black shadow-lg z-40 mobile-menu">
+<div class="py-6 px-4">
+<nav class="flex flex-col space-y-6">
+<a href="#iphone" class="text-gray-300 hover:text-primary text-lg">iPhone</a>
+<a href="#accessories" class="text-gray-300 hover:text-primary text-lg">Аксессуары</a>
+<a href="#about" class="text-gray-300 hover:text-primary text-lg">О нас</a>
+<a href="#contacts" class="text-gray-300 hover:text-primary text-lg">Контакты</a>
+</nav>
+</div>
+</div>
+
+<main class="mt-16">
+<section class="relative h-[85vh] md:h-[85vh] overflow-hidden">
+<div class="absolute inset-0">
+<img src="banner.png" class="w-full h-full object-cover" alt="Hero Background">
+</div>
+<div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+<div class="text-white max-w-2xl">
+<h1 class="text-4xl md:text-7xl font-bold mb-4 md:mb-8 leading-tight">Искусство технологий</h1>
+<p class="text-lg md:text-xl mb-8 md:mb-12 leading-relaxed opacity-90">Откройте для себя непревзойденное качество и инновации. Премиальные iPhone в iReal - ваш путь к совершенству.</p>
+<div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+<button class="w-full sm:w-auto bg-white text-gray-900 px-6 py-3 md:px-8 md:py-4 rounded-button text-base md:text-lg font-medium hover:bg-opacity-90 transition-all flex items-center justify-center space-x-2">
+<span>Исследовать коллекцию</span>
+<span class="text-sm">➔</span>
+</button>
+<a href="#" class="w-full sm:w-auto text-center text-white hover:text-primary transition-colors flex items-center justify-center space-x-2">
+<span>Узнать больше</span>
+<span class="text-sm">↗</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+
+<hr class="silver-divider" />
+
+<section id="iphone" class="py-16 md:py-24 bg-black">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row md:justify-between md:items-center mb-8">
+<h2 class="text-3xl font-bold mb-6 md:mb-0 text-white">Популярные модели</h2>
+<div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
+  <div class="flex-1">
+    <select id="modelSelect" class="filter-select px-4 py-2 rounded-button border border-[#C0C0C0] bg-black text-sm w-full text-white focus:ring-2 focus:ring-[#C0C0C0]">
+      <option value="all">Все модели</option>
+      <option value="iphone15promax">iPhone 15 Pro Max</option>
+      <option value="iphone16promax">iPhone 16 Pro Max</option>
+      <option value="iphone14">iPhone 14</option>
+      <option value="iphone13">iPhone 13</option>
+      <option value="galaxys24">Samsung Galaxy S24</option>
+      <option value="nothingphone3a">Nothing Phone 3a</option>
+      <option value="nothingphone3apro">Nothing Phone 3a Pro</option>
+      <option value="honorx7c">Honor X7c</option>
+      <!-- Добавьте другие модели при необходимости -->
+    </select>
+  </div>
+  <div class="flex-1">
+    <select id="storageSelect" class="filter-select px-4 py-2 rounded-button border border-[#C0C0C0] bg-black text-sm w-full text-white focus:ring-2 focus:ring-[#C0C0C0]">
+      <option value="all">Все объемы</option>
+      <option value="128gb">128 GB</option>
+      <option value="256gb">256 GB</option>
+      <option value="512gb">512 GB</option>
+      <option value="1tb">1 TB</option>
+    </select>
+  </div>
+  <div class="flex-1">
+    <select id="colorSelect" class="filter-select px-4 py-2 rounded-button border border-[#C0C0C0] bg-black text-sm w-full text-white focus:ring-2 focus:ring-[#C0C0C0]">
+      <option value="all">Все цвета</option>
+      <option value="white">Белый</option>
+      <option value="gray">Серый</option>
+      <option value="blue">Синий</option>
+      <option value="black">Черный</option>
+      <option value="gold">Золотистый</option>
+      <option value="silver">Серебристый</option>
+      <option value="yellow">Жёлтый</option>
+      <option value="green">Зелёный</option>
+      <!-- Добавьте другие цвета при необходимости -->
+    </select>
+  </div>
+  <div class="relative flex-1">
+    <select id="sortSelect" class="filter-select px-4 py-2 rounded-button border border-[#C0C0C0] bg-black text-sm appearance-none pr-8 w-full text-white focus:ring-2 focus:ring-[#C0C0C0]">
+      <option value="default">По умолчанию</option>
+      <option value="price-asc">По цене (возр.)</option>
+      <option value="price-desc">По цене (убыв.)</option>
+    </select>
+    <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+      <svg class="h-4 w-4" style="color:#C0C0C0;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#C0C0C0">
+        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+      </svg>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- iPhone 15 Pro Max models -->
+<!-- 256GB Models -->
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone15promax" data-storage="256gb" data-price="92000" data-color="white">
+<img src="iphone15promax-white.jpg" class="w-full h-64 object-contain" alt="iPhone 15 Pro Max White Titanium 256GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 15 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>256 GB • Белый-титановый • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">92 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.5-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone15promax" data-storage="256gb" data-price="104000" data-color="gray">
+<img src="iphone15promax-gray.jpg" class="w-full h-64 object-contain" alt="iPhone 15 Pro Max Gray Titanium 256GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 15 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>256 GB • Серый-титановый • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">104 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.5-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone15promax" data-storage="256gb" data-price="92000" data-color="blue">
+<img src="iphone15promax-blue.jpg" class="w-full h-64 object-contain" alt="iPhone 15 Pro Max Blue Titanium 256GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 15 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>256 GB • Синий-титановый • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">92 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.50-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone15promax" data-storage="256gb" data-price="135000" data-color="black">
+<img src="iphone15promax-black.jpg" class="w-full h-64 object-contain" alt="iPhone 15 Pro Max Black Titanium 256GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 15 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>256 GB • Черный-титановый • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">135 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.50-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<!-- 512GB Models -->
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone15promax" data-storage="512gb" data-price="116000" data-color="white">
+<img src="iphone15promax-white.jpg" class="w-full h-64 object-contain" alt="iPhone 15 Pro Max White Titanium 512GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 15 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>512 GB • Белый-титановый • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">116 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.50-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone15promax" data-storage="512gb" data-price="134000" data-color="gray">
+<img src="iphone15promax-gray.jpg" class="w-full h-64 object-contain" alt="iPhone 15 Pro Max Gray Titanium 512GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 15 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>512 GB • Серый-титановый • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">134 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.50-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone15promax" data-storage="512gb" data-price="94000" data-color="blue">
+<img src="iphone15promax-blue.jpg" class="w-full h-64 object-contain" alt="iPhone 15 Pro Max Blue Titanium 512GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 15 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>512 GB • Синий-титановый • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">94 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.50-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone15promax" data-storage="512gb" data-price="117000" data-color="black">
+<img src="iphone15promax-black.jpg" class="w-full h-64 object-contain" alt="iPhone 15 Pro Max Black Titanium 512GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 15 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>512 GB • Черный-титановый • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">117 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.50-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<!-- 1TB Models -->
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone15promax" data-storage="1tb" data-price="141000" data-color="white">
+<img src="iphone15promax-white.jpg" class="w-full h-64 object-contain" alt="iPhone 15 Pro Max White Titanium 1TB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 15 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>1 TB • Белый-титановый • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">141 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.50-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone15promax" data-storage="1tb" data-price="181000" data-color="gray">
+<img src="iphone15promax-gray.jpg" class="w-full h-64 object-contain" alt="iPhone 15 Pro Max Gray Titanium 1TB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 15 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>1 TB • Серый-титановый • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">181 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.50-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone15promax" data-storage="1tb" data-price="141000" data-color="blue">
+<img src="iphone15promax-blue.jpg" class="w-full h-64 object-contain" alt="iPhone 15 Pro Max Blue Titanium 1TB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 15 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>1 TB • Синий-титановый • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">141 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.50-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone15promax" data-storage="1tb" data-price="137000" data-color="black">
+<img src="iphone15promax-black.jpg" class="w-full h-64 object-contain" alt="iPhone 15 Pro Max Black Titanium 1TB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 15 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>1 TB • Черный-титановый • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">137 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.50-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<!-- iPhone 16 Pro Max models -->
+<!-- 256GB Models -->
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone16promax" data-storage="256gb" data-price="112000" data-color="white">
+<img src="iphone16promax-white.jpg" class="w-full h-64 object-contain" alt="iPhone 16 Pro Max White 256GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 16 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>256 GB • Белый • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">112 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.50-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone16promax" data-storage="256gb" data-price="112000" data-color="gold">
+<img src="iphone16promax-desert.jpg" class="w-full h-64 object-contain" alt="iPhone 16 Pro Max Gold 256GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 16 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>256 GB • Золотистый • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">112 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.50-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone16promax" data-storage="256gb" data-price="127000" data-color="silver">
+<img src="iphone16promax-gray.jpg" class="w-full h-64 object-contain" alt="iPhone 16 Pro Max Silver 256GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 16 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>256 GB • Серебристый • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">127 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.50-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone16promax" data-storage="256gb" data-price="114000" data-color="black">
+<img src="iphone16promax-black.jpg" class="w-full h-64 object-contain" alt="iPhone 16 Pro Max Black 256GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 16 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>256 GB • Чёрный • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">114 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.50-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<!-- 512GB Models -->
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone16promax" data-storage="512gb" data-price="131000" data-color="white">
+<img src="iphone16promax-white.jpg" class="w-full h-64 object-contain" alt="iPhone 16 Pro Max White 512GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 16 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>512 GB • Белый • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">131 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.50-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone16promax" data-storage="512gb" data-price="133000" data-color="gold">
+<img src="iphone16promax-desert.jpg" class="w-full h-64 object-contain" alt="iPhone 16 Pro Max Gold 512GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 16 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>512 GB • Золотистый • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">133 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.50-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone16promax" data-storage="512gb" data-price="138000" data-color="silver">
+<img src="iphone16promax-gray.jpg" class="w-full h-64 object-contain" alt="iPhone 16 Pro Max Silver 512GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 16 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>512 GB • Серебристый • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">138 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.50-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone16promax" data-storage="512gb" data-price="134000" data-color="black">
+<img src="iphone16promax-black.jpg" class="w-full h-64 object-contain" alt="iPhone 16 Pro Max Black 512GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 16 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>512 GB • Чёрный • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">134 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.50-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<!-- 1TB Models -->
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone16promax" data-storage="1tb" data-price="146000" data-color="white">
+<img src="iphone16promax-white.jpg" class="w-full h-64 object-contain" alt="iPhone 16 Pro Max White 1TB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 16 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>1 TB • Белый • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">146 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.50-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone16promax" data-storage="1tb" data-price="139000" data-color="gold">
+<img src="iphone16promax-desert.jpg" class="w-full h-64 object-contain" alt="iPhone 16 Pro Max Gold 1TB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 16 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>1 TB • Золотистый • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">139 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.50-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone16promax" data-storage="1tb" data-price="152000" data-color="silver">
+<img src="iphone16promax-gray.jpg" class="w-full h-64 object-contain" alt="iPhone 16 Pro Max Silver 1TB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 16 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>1 TB • Серебристый • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">152 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.50-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone16promax" data-storage="1tb" data-price="147000" data-color="black">
+<img src="iphone16promax-black.jpg" class="w-full h-64 object-contain" alt="iPhone 16 Pro Max Black 1TB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 16 Pro Max</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>1 TB • Чёрный • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">147 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.50-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<!-- iPhone 13 128GB Starlight (White) -->
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone13" data-storage="128gb" data-price="52000" data-color="white">
+<img src="iphone13-white.jpg" class="w-full h-64 object-contain" alt="iPhone 13 Starlight 128GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 13 Starlight</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>128 GB • Белый (Starlight) • nanoSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">52 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.5-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+<!-- iPhone 13 128GB Midnight (Black) -->
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone13" data-storage="128gb" data-price="49000" data-color="black">
+<img src="iphone13-black.jpg" class="w-full h-64 object-contain" alt="iPhone 13 Midnight 128GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 13 Midnight</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>128 GB • Чёрный (Midnight) • nanoSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">49 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.5-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+<!-- iPhone 14 128GB Midnight (Black) -->
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone14" data-storage="128gb" data-price="55000" data-color="black">
+<img src="iphone14-black.jpg" class="w-full h-64 object-contain" alt="iPhone 14 Midnight 128GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 14 Midnight</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>128 GB • Чёрный (Midnight) • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">55 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.5-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+<!-- iPhone 14 256GB Midnight (Black) -->
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone14" data-storage="256gb" data-price="67000" data-color="black">
+<img src="iphone14-black.jpg" class="w-full h-64 object-contain" alt="iPhone 14 Midnight 256GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 14 Midnight</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>256 GB • Чёрный (Midnight) • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">67 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.5-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+<!-- iPhone 14 128GB Yellow -->
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone14" data-storage="128gb" data-price="55000" data-color="yellow">
+<img src="iphone14-yellow.jpg" class="w-full h-64 object-contain" alt="iPhone 14 Yellow 128GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 14 Yellow</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>128 GB • Жёлтый (Yellow) • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">55 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.5-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+<!-- iPhone 14 256GB Starlight (White) -->
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="iphone14" data-storage="256gb" data-price="57000" data-color="white">
+<img src="iphone14-white.jpg" class="w-full h-64 object-contain" alt="iPhone 14 Starlight 256GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">iPhone 14 Starlight</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>256 GB • Белый (Starlight) • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">57 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.5-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<!-- Samsung Galaxy S24 128GB Black -->
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="galaxys24" data-storage="128gb" data-price="51000" data-color="black">
+<img src="galaxySE24-black.jpg" class="w-full h-64 object-contain" alt="Samsung Galaxy S24 Black 128GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">Samsung Galaxy S24</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>128 GB • Чёрный • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">51 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.5-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<!-- Nothing Phone 3a 128GB Black -->
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="nothingphone3a" data-storage="128gb" data-price="37000" data-color="black">
+<img src="nothingphone3a-black.jpg" class="w-full h-64 object-contain" alt="Nothing Phone 3a Black 128GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">Nothing Phone 3a</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>128 GB • Чёрный • nanoSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">37 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.5-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Nothing Phone 3a 128GB White -->
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="nothingphone3a" data-storage="128gb" data-price="40000" data-color="white">
+<img src="nothingphone3a-white.jpg" class="w-full h-64 object-contain" alt="Nothing Phone 3a White 128GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">Nothing Phone 3a</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>128 GB • Белый • nanoSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">40 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.5-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<!-- Nothing Phone 3a Pro 256GB Black -->
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="nothingphone3apro" data-storage="256gb" data-price="49000" data-color="black">
+<img src="nothingphone3apro-black.jpg" class="w-full h-64 object-contain" alt="Nothing Phone 3a Pro Black 256GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">Nothing Phone 3a Pro</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>256 GB • Чёрный • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">49 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.5-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Nothing Phone 3a Pro 256GB White -->
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="nothingphone3apro" data-storage="256gb" data-price="53000" data-color="white">
+<img src="nothingphone3apro-white.jpg" class="w-full h-64 object-contain" alt="Nothing Phone 3a Pro White 256GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">Nothing Phone 3a Pro</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>256 GB • Белый • nanoSIM + eSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">53 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.5-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+<!-- Honor X7c 128GB White -->
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="honorx7c" data-storage="128gb" data-price="23000" data-color="white">
+<img src="honorx7c-white.jpg" class="w-full h-64 object-contain" alt="Honor X7c White 128GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">Honor X7c</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>128 GB • Белый • nanoSIM + nanoSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">23 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.5-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Honor X7c 128GB Black -->
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="honorx7c" data-storage="128gb" data-price="23000" data-color="black">
+<img src="honorx7c-black.jpg" class="w-full h-64 object-contain" alt="Honor X7c Black 128GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">Honor X7c</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>128 GB • Чёрный • nanoSIM + nanoSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">23 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.5-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Honor X7c 128GB Green -->
+<div class="product-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 mt-6" 
+     data-model="honorx7c" data-storage="128gb" data-price="23000" data-color="green">
+<img src="honorx7c-green.jpg" class="w-full h-64 object-contain" alt="Honor X7c Green 128GB">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2 text-gray-900">Honor X7c</h3>
+<div class="text-sm text-gray-500 mb-4">
+<p>128 GB • Зелёный • nanoSIM + nanoSIM</p>
+<p>Новый • Гарантия 1 год</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="text-lg font-bold text-gray-900">23 000 ₽</div>
+<a href="https://wa.me/79898982042" class="bg-neutral-900 text-white px-4 py-2 rounded-button flex items-center space-x-2 transition-all buy-btn">
+<svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.5-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+<span>Купить</span>
+</a>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<hr class="silver-divider" />
+
+<section id="about" class="py-16 bg-black">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl font-bold text-center mb-12 text-white">О нас</h2>
+<div class="text-center max-w-2xl mx-auto mb-12">
+<p class="text-gray-400">iReal — современный магазин техники Apple. Мы предлагаем новые iPhone и аксессуары с официальной гарантией, профессиональной консультацией и быстрой доставкой по Москве и области. Наш офис: Звенигород, микрорайон Супонево, 14.</p>
+</div>
+</div>
+</section>
+
+<hr class="silver-divider" />
+
+<footer class="bg-black text-white py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div>
+<a href="#" class="font-['Pacifico'] text-2xl text-white mb-4 block"><img src="logo.jpg" alt="iReal Logo" class="h-8 inline-block"></a>
+<p class="text-gray-400">Официальный магазин iPhone в России</p>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4 text-white">Контакты</h4>
+<p class="text-gray-400 mb-2">+7 (989) 898-20-42</p>
+<p class="text-gray-400 mb-2">kdarknet@bk.ru</p>
+<p class="text-gray-400">Звенигород, микрорайон Супонево, 14</p>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4 text-white">Информация</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white">О компании</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Доставка</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Гарантия</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Контакты</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4 text-white">Мы в соцсетях</h4>
+<div class="flex flex-col space-y-3">
+  <a href="https://qqraww.github.io/iReal.github.io" target="_blank" class="flex items-center text-gray-400 hover:text-white">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
+    <span>Наш сайт</span>
+  </a>
+  <a href="https://www.instagram.com/ireal_official_2025?igsh=ZHppdjRudTcwMjBl" target="_blank" class="flex items-center text-gray-400 hover:text-white">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    <span>Instagram</span>
+  </a>
+  <a href="https://chat.whatsapp.com/K5eFosEqFsNCW9MJYE8aJ9?mode=ac_t" target="_blank" class="flex items-center text-gray-400 hover:text-white">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 2.1.54 4.07 1.47 5.83L0 24l6.34-1.67c1.62.88 3.47 1.34 5.66 1.34C18.63 24 24 18.63 24 12S18.63 0 12 0zm3.93 16.93c-.24.69-.73 1.21-1.49 1.58-.92.45-2.12.36-3.42-.22-1.44-.64-2.65-1.73-3.62-3.07-.97-1.34-1.49-2.83-1.49-4.34 0-1.22.39-2.35 1.05-3.28.24-.34.56-.57.93-.65.08-.02.17-.03.26-.03.26 0 .5.11.67.33.18.22.42.52.67.87.25.35.49.72.73 1.09.24.37.42.67.54.91.12.24.17.51.12.78-.05.27-.17.53-.36.77-.19.24-.43.43-.72.58-.29.15-.59.27-.89.39-.29.12-.5.25-.64.39-.14.14-.25.32-.33.53-.08.21-.11.44-.11.67 0 .45.15.89.44 1.31.29.42.71.78 1.24 1.08.53.3 1.15.52 1.85.66.7.14 1.39.17 2.03.08.64-.08 1.19-.29 1.64-.62.45-.33.79-.77 1.02-1.31.22-.54.24-.99.07-1.34-.17-.35-.54-.58-1.01-.69zm-3.93-2.62c-.19 0-.37-.06-.52-.17l-.72-.43c-.19-.11-.33-.29-.41-.5-.08-.21-.08-.44 0-.65l.36-.87c.08-.21.06-.44-.06-.65-.12-.21-.29-.37-.5-.48l-.87-.52c-.21-.12-.46-.17-.7-.12-.24.05-.45.17-.61.36-.16.19-.27.41-.33.65-.06.24-.08.49-.05.74.03.25.11.49.24.71.13.22.29.42.48.59.19.17.4.31.64.43.24.12.5.21.78.27.28.06.56.08.84.06.28-.02.55-.11.79-.25.24-.14.45-.33.61-.56.16-.23.27-.49.33-.78.06-.29.03-.58-.09-.85-.12-.27-.33-.49-.61-.65-.28-.16-.60-.25-.93-.27z"/></svg>
+    <span>WhatsApp</span>
+  </a>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+<p>&copy; 2025 iReal. Все права защищены.</p>
+</div>
+</div>
+</footer>
+
+<script>
+// Mobile Menu Toggle
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+});
+
+// Old filter functionality removed
+
+// --- Новый фильтр и сортировка ---
+function filterAndSortProducts() {
+  const model = document.getElementById('modelSelect').value;
+  const storage = document.getElementById('storageSelect').value;
+  const color = document.getElementById('colorSelect').value;
+  const sort = document.getElementById('sortSelect').value;
+  const grid = document.getElementById('productGrid');
+  const allCards = Array.from(document.querySelectorAll('.product-card'));
+
+  let matchedCards = [];
+
+  // Фильтрация: Определяем, какие карточки должны быть видимы
+  allCards.forEach(card => {
+    const cardModel = card.dataset.model;
+    const cardStorage = card.dataset.storage;
+    const cardColor = card.dataset.color;
+
+    const modelMatch = (model === 'all' || cardModel === model);
+    const storageMatch = (storage === 'all' || cardStorage === storage);
+    const colorMatch = (color === 'all' || cardColor === color);
+
+    if (modelMatch && storageMatch && colorMatch) {
+      matchedCards.push(card);
+    }
+  });
+
+  // Сортировка: Сортируем массив совпадающих карточек
+  if (sort === 'price-asc') {
+    matchedCards.sort((a, b) => parseInt(a.dataset.price) - parseInt(b.dataset.price));
+  } else if (sort === 'price-desc') {
+    matchedCards.sort((a, b) => parseInt(b.dataset.price) - parseInt(a.dataset.price));
+  }
+
+  // Скрываем все карточки, чтобы потом показать только нужные
+  allCards.forEach(card => {
+    card.style.display = 'none';
+  });
+
+  if (matchedCards.length === 0) {
+    // Если нет совпадающих товаров, показываем сообщение
+    const existingNoResults = document.getElementById('no-results-message');
+    if (!existingNoResults) {
+        const msg = document.createElement('div');
+        msg.id = 'no-results-message';
+        msg.className = 'col-span-full text-center text-gray-500 py-12 text-lg';
+        msg.textContent = 'Нет товаров по выбранным параметрам';
+        grid.appendChild(msg);
+    }
+  } else {
+    // Удаляем сообщение "нет товаров", если оно есть
+    const existingNoResults = document.getElementById('no-results-message');
+    if (existingNoResults) {
+        existingNoResults.remove();
+    }
+
+    // Добавляем отсортированные карточки в сетку. Это переместит их.
+    matchedCards.forEach(card => {
+      grid.appendChild(card);
+      card.style.display = 'block'; // Убеждаемся, что карточка видна
+    });
+  }
+
+  // Обновляем обработчики кнопок "Купить"
+  updateBuyButtons();
+}
+
+document.getElementById('modelSelect').addEventListener('change', filterAndSortProducts);
+document.getElementById('storageSelect').addEventListener('change', filterAndSortProducts);
+document.getElementById('colorSelect').addEventListener('change', filterAndSortProducts);
+document.getElementById('sortSelect').addEventListener('change', filterAndSortProducts);
+window.addEventListener('DOMContentLoaded', filterAndSortProducts);
+
+// Кнопка Купить - WhatsApp с параметрами
+function updateBuyButtons() {
+  document.querySelectorAll('.product-card').forEach(card => {
+    const buyBtn = card.querySelector('a[href^="https://wa.me/"]');
+    if (buyBtn) {
+      // Удаляем старые обработчики, если есть
+      const newBtn = buyBtn.cloneNode(true);
+      buyBtn.parentNode.replaceChild(newBtn, buyBtn);
+      newBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const model = card.querySelector('h3').innerText.trim();
+        const storage = card.dataset.storage.toUpperCase();
+        const color = card.dataset.color;
+        const price = card.querySelector('.font-bold').innerText.trim();
+        let colorRu = color;
+        if (color === 'white') colorRu = 'Белый';
+        if (color === 'gray') colorRu = 'Серый';
+        if (color === 'blue') colorRu = 'Синий';
+        if (color === 'black') colorRu = 'Черный';
+        if (color === 'gold') colorRu = 'Золотистый';
+        if (color === 'silver') colorRu = 'Серебристый';
+        const text = encodeURIComponent(`Здравствуйте! Хочу купить ${model} ${storage}, цвет: ${colorRu}, цена: ${price}`);
+        const whatsappUrl = `https://wa.me/79898982042?text=${text}`;
+        console.log('Generated WhatsApp URL:', whatsappUrl); // Отладочное сообщение
+        window.open(whatsappUrl, '_blank');
       });
-    </script>
-  </body>
+    }
+  });
+}
+
+// --- Поиск по каталогу (только ПК) ---
+const searchInput = document.getElementById('catalogSearchInput');
+const searchDropdown = document.getElementById('searchDropdown');
+const catalogSearchBlock = document.getElementById('catalogSearchBlock');
+
+if (searchInput && searchDropdown) {
+  searchInput.addEventListener('input', function() {
+    const query = this.value.trim().toLowerCase();
+    if (!query) {
+      searchDropdown.classList.add('hidden');
+      return;
+    }
+    const allCards = Array.from(document.querySelectorAll('.product-card'));
+    const matches = allCards.filter(card => {
+      const title = card.querySelector('h3')?.innerText?.toLowerCase() || '';
+      return title.includes(query);
+    });
+    searchDropdown.innerHTML = '';
+    if (matches.length === 0) {
+      searchDropdown.innerHTML = '<div class="p-4 text-gray-500 text-center">Нет товаров по вашему запросу</div>';
+    } else {
+      matches.slice(0, 8).forEach(card => {
+        const resultDiv = document.createElement('div');
+        resultDiv.className = 'flex items-center space-x-4 p-2 hover:bg-gray-100 cursor-pointer rounded-lg';
+        // Картинка
+        const img = document.createElement('img');
+        img.src = card.querySelector('img').src;
+        img.alt = card.querySelector('img').alt;
+        img.className = 'w-12 h-12 object-contain';
+        // Текст
+        const textDiv = document.createElement('div');
+        const titleDiv = document.createElement('div');
+        titleDiv.className = 'font-semibold text-gray-900';
+        titleDiv.textContent = card.querySelector('h3').innerText;
+        const priceDiv = document.createElement('div');
+        priceDiv.className = 'text-sm text-gray-500';
+        priceDiv.textContent = card.querySelector('.font-bold').innerText;
+        textDiv.appendChild(titleDiv);
+        textDiv.appendChild(priceDiv);
+        resultDiv.appendChild(img);
+        resultDiv.appendChild(textDiv);
+        resultDiv.addEventListener('click', function() {
+          document.getElementById('productGrid').scrollIntoView({behavior: 'smooth'});
+          card.style.boxShadow = '0 0 0 3px #C0C0C0';
+          setTimeout(() => { card.style.boxShadow = ''; }, 1200);
+          searchDropdown.classList.add('hidden');
+          searchInput.value = '';
+        });
+        searchDropdown.appendChild(resultDiv);
+      });
+    }
+    searchDropdown.classList.remove('hidden');
+  });
+  // Скрывать dropdown при клике вне поиска
+  document.addEventListener('click', function(e) {
+    if (!catalogSearchBlock.contains(e.target)) {
+      searchDropdown.classList.add('hidden');
+    }
+  });
+}
+</script>
+</body>
 </html>

@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iReal - Оригинальные iPhone и аксессуары Apple</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+      :where([class^="ri-"])::before {
+      content: "\f3c2";
+      }
+      /* Кастомные стрелки для Swiper */
+      .swiper-button-next, .swiper-button-prev {
+        width: 40px;
+        height: 40px;
+        background: rgba(255,255,255,0.85);
+        border-radius: 9999px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s, box-shadow 0.2s;
+        color: #007AFF;
+        font-size: 24px;
+      }
+      .swiper-button-next:hover, .swiper-button-prev:hover {
+        background: #007AFF;
+        color: #fff;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      }
+      /* Скрыть стандартные SVG-стрелки Swiper */
+      .swiper-button-next::after, .swiper-button-prev::after {
+        display: none;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#007AFF",
+              secondary: "#34C759",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center">
+            <h1 class="text-2xl font-['Pacifico'] text-primary">iReal</h1>
+          </div>
+          <nav class="hidden md:flex space-x-8">
+            <a
+              href="#products"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Товары</a
+            >
+            <a
+              href="#about"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >О нас</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-700 hover:text-primary transition-colors"
+              >Контакты</a
+            >
+          </nav>
+          <div class="flex items-center space-x-4">
+            <div class="flex items-center text-gray-700">
+              <div class="w-5 h-5 flex items-center justify-center mr-2">
+                <i class="ri-phone-line text-primary"></i>
+              </div>
+              <span class="font-medium">+7 989 898-20-42</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section
+        class="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-20 overflow-hidden"
+        style="background-image: url('https://readdy.ai/api/search-image?query=modern%20minimalist%20tech%20store%20background%20with%20iphone%20devices%20floating%20in%20clean%20white%20space%20professional%20lighting%20soft%20shadows%20premium%20technology%20atmosphere%20blue%20and%20white%20color%20scheme%20left%20side%20empty%20for%20text%20right%20side%20with%20elegant%20iphone%20display&width=1920&height=800&seq=hero1&orientation=landscape'); background-size: cover; background-position: center;"
+      >
+        <div class="absolute inset-0 bg-white bg-opacity-80"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="w-full">
+            <div class="max-w-2xl">
+              <h1 class="text-5xl font-bold text-gray-900 mb-6">
+                Оригинальные iPhone<br />
+                <span class="text-primary">по лучшим ценам</span>
+              </h1>
+              <p class="text-xl text-gray-600 mb-8">
+                Гарантированно оригинальная техника Apple с гарантией до 12
+                месяцев. Экономьте до 30% от розничных цен.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4">
+                <button
+                  onclick="scrollToProducts()"
+                  class="bg-primary text-white px-8 py-4 !rounded-button font-semibold hover:bg-blue-600 transition-colors whitespace-nowrap"
+                >
+                  Посмотреть товары
+                </button>
+                <a
+                  href="https://wa.me/79898982042?text=Здравствуйте,%20хочу%20узнать%20подробности%20о%20ваших%20товарах"
+                  class="border-2 border-primary text-primary px-8 py-4 !rounded-button font-semibold hover:bg-primary hover:text-white transition-colors text-center whitespace-nowrap"
+                >
+                  Связаться в WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="products" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Наши товары</h2>
+            <p class="text-lg text-gray-600">
+              Только оригинальная техника Apple с официальной гарантией
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div
+              class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
+            >
+              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="iphoneX-1.png" alt="iPhone X" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphoneX-2.png" alt="iPhone X" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphoneX-3.png" alt="iPhone X" class="w-full h-full object-contain object-center" /></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
+                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-3">iPhone X</h3>
+                <div class="space-y-2 mb-4">
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-palette-line"></i>
+                    </div>
+                    <span>Цвет: белый</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-database-line"></i>
+                    </div>
+                    <span>Память: 256 ГБ</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-star-line"></i>
+                    </div>
+                    <span>Состояние: отличное, без эксплуатации</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-shield-check-line"></i>
+                    </div>
+                    <span>Гарантия: до 12 месяцев</span>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <div class="text-2xl font-bold text-gray-900">18 700 ₽</div>
+                </div>
+                <button
+                  onclick="buyProduct('iPhone X')"
+                  class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-600 transition-colors whitespace-nowrap"
+                >
+                  Купить в WhatsApp
+                </button>
+                <div class="text-xs text-gray-400 text-center mt-1">
+                  Покупая, вы соглашаетесь с <a href="#" onclick="openAgreementModal(); return false;" class="underline">пользовательским соглашением</a> и <a href="#" onclick="openPolicyModal(); return false;" class="underline">политикой обработки данных</a>.
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
+            >
+              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="iphone11-1.png" alt="iPhone 11" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone11-2.png" alt="iPhone 11" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone11-3.png" alt="iPhone 11" class="w-full h-full object-contain object-center" /></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
+                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-3">iPhone 11</h3>
+                <div class="space-y-2 mb-4">
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-palette-line"></i>
+                    </div>
+                    <span>Цвет: чёрный</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-database-line"></i>
+                    </div>
+                    <span>Память: 256 ГБ</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-star-line"></i>
+                    </div>
+                    <span>Состояние: отличное, не тронутый</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-shield-check-line"></i>
+                    </div>
+                    <span>Гарантия: до 12 месяцев</span>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <div class="text-2xl font-bold text-gray-900">23 617 ₽</div>
+                </div>
+                <button
+                  onclick="buyProduct('iPhone 11')"
+                  class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-600 transition-colors whitespace-nowrap"
+                >
+                  Купить в WhatsApp
+                </button>
+                <div class="text-xs text-gray-400 text-center mt-1">
+                  Покупая, вы соглашаетесь с <a href="#" onclick="openAgreementModal(); return false;" class="underline">пользовательским соглашением</a> и <a href="#" onclick="openPolicyModal(); return false;" class="underline">политикой обработки данных</a>.
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
+            >
+              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="iphone12-1.png" alt="iPhone 12" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone12-2.png" alt="iPhone 12" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone12-3.png" alt="iPhone 12" class="w-full h-full object-contain object-center" /></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
+                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-3">iPhone 12</h3>
+                <div class="space-y-2 mb-4">
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-palette-line"></i>
+                    </div>
+                    <span>Цвет: чёрный</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-database-line"></i>
+                    </div>
+                    <span>Память: 256 ГБ</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-star-line"></i>
+                    </div>
+                    <span>Состояние: как новый</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-shield-check-line"></i>
+                    </div>
+                    <span>Гарантия: до 12 месяцев</span>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <div class="text-2xl font-bold text-gray-900">29 636 ₽</div>
+                </div>
+                <button
+                  onclick="buyProduct('iPhone 12')"
+                  class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-600 transition-colors whitespace-nowrap"
+                >
+                  Купить в WhatsApp
+                </button>
+                <div class="text-xs text-gray-400 text-center mt-1">
+                  Покупая, вы соглашаетесь с <a href="#" onclick="openAgreementModal(); return false;" class="underline">пользовательским соглашением</a> и <a href="#" onclick="openPolicyModal(); return false;" class="underline">политикой обработки данных</a>.
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
+            >
+              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="iphone13-1.png" alt="iPhone 13" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone13-2.png" alt="iPhone 13" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone13-3.png" alt="iPhone 13" class="w-full h-full object-contain object-center" /></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
+                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-3">iPhone 13</h3>
+                <div class="space-y-2 mb-4">
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-palette-line"></i>
+                    </div>
+                    <span>Цвет: белый</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-database-line"></i>
+                    </div>
+                    <span>Память: 256 ГБ</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-star-line"></i>
+                    </div>
+                    <span>Состояние: отличное, прямо с завода</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-shield-check-line"></i>
+                    </div>
+                    <span>Гарантия: до 12 месяцев</span>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <div class="text-2xl font-bold text-gray-900">54 990 ₽</div>
+                </div>
+                <button
+                  onclick="buyProduct('iPhone 13')"
+                  class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-600 transition-colors whitespace-nowrap"
+                >
+                  Купить в WhatsApp
+                </button>
+                <div class="text-xs text-gray-400 text-center mt-1">
+                  Покупая, вы соглашаетесь с <a href="#" onclick="openAgreementModal(); return false;" class="underline">пользовательским соглашением</a> и <a href="#" onclick="openPolicyModal(); return false;" class="underline">политикой обработки данных</a>.
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
+            >
+              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="iphone14-1.png" alt="iPhone 14" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone14-2.png" alt="iPhone 14" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone14-3.png" alt="iPhone 14" class="w-full h-full object-contain object-center" /></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
+                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-3">iPhone 14</h3>
+                <div class="space-y-2 mb-4">
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-palette-line"></i>
+                    </div>
+                    <span>Цвет: чёрный</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-database-line"></i>
+                    </div>
+                    <span>Память: 128 ГБ</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-star-line"></i>
+                    </div>
+                    <span>Состояние: как с витрины</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-shield-check-line"></i>
+                    </div>
+                    <span>Гарантия: до 12 месяцев</span>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <div class="text-2xl font-bold text-gray-900">49 464 ₽</div>
+                </div>
+                <button
+                  onclick="buyProduct('iPhone 14')"
+                  class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-600 transition-colors whitespace-nowrap"
+                >
+                  Купить в WhatsApp
+                </button>
+                <div class="text-xs text-gray-400 text-center mt-1">
+                  Покупая, вы соглашаетесь с <a href="#" onclick="openAgreementModal(); return false;" class="underline">пользовательским соглашением</a> и <a href="#" onclick="openPolicyModal(); return false;" class="underline">политикой обработки данных</a>.
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
+            >
+              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="iphone15-1.png" alt="iPhone 15" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone15-2.png" alt="iPhone 15" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone15-3.png" alt="iPhone 15" class="w-full h-full object-contain object-center" /></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
+                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-3">iPhone 15</h3>
+                <div class="space-y-2 mb-4">
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-palette-line"></i>
+                    </div>
+                    <span>Цвет: розовый</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-database-line"></i>
+                    </div>
+                    <span>Память: 256 ГБ</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-star-line"></i>
+                    </div>
+                    <span>Состояние: как новый, без следов</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-shield-check-line"></i>
+                    </div>
+                    <span>Гарантия: до 12 месяцев</span>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <div class="text-2xl font-bold text-gray-900">64 132 ₽</div>
+                </div>
+                <button
+                  onclick="buyProduct('iPhone 15')"
+                  class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-600 transition-colors whitespace-nowrap"
+                >
+                  Купить в WhatsApp
+                </button>
+                <div class="text-xs text-gray-400 text-center mt-1">
+                  Покупая, вы соглашаетесь с <a href="#" onclick="openAgreementModal(); return false;" class="underline">пользовательским соглашением</a> и <a href="#" onclick="openPolicyModal(); return false;" class="underline">политикой обработки данных</a>.
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
+            >
+              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="iphone16-1.png" alt="iPhone 16" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone16-2.png" alt="iPhone 16" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="iphone16-3.png" alt="iPhone 16" class="w-full h-full object-contain object-center" /></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
+                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-3">iPhone 16</h3>
+                <div class="space-y-2 mb-4">
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-palette-line"></i>
+                    </div>
+                    <span>Цвет: тёмный</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-database-line"></i>
+                    </div>
+                    <span>Память: 256 ГБ</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-star-line"></i>
+                    </div>
+                    <span>Состояние: как новый, без следов</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-shield-check-line"></i>
+                    </div>
+                    <span>Гарантия: до 12 месяцев</span>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <div class="text-2xl font-bold text-gray-900">81 589 ₽</div>
+                </div>
+                <button
+                  onclick="buyProduct('iPhone 16')"
+                  class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-600 transition-colors whitespace-nowrap"
+                >
+                  Купить в WhatsApp
+                </button>
+                <div class="text-xs text-gray-400 text-center mt-1">
+                  Покупая, вы соглашаетесь с <a href="#" onclick="openAgreementModal(); return false;" class="underline">пользовательским соглашением</a> и <a href="#" onclick="openPolicyModal(); return false;" class="underline">политикой обработки данных</a>.
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow"
+            >
+              <div class="swiper product-swiper aspect-[3/4] bg-gray-50">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="airpodspro2-1.png" alt="AirPods Pro 2" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="airpodspro2-2.png" alt="AirPods Pro 2" class="w-full h-full object-contain object-center" /></div>
+                  <div class="swiper-slide"><img src="airpodspro2-3.png" alt="AirPods Pro 2" class="w-full h-full object-contain object-center" /></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"><i class="ri-arrow-right-s-line"></i></div>
+                <div class="swiper-button-prev"><i class="ri-arrow-left-s-line"></i></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-3">
+                  AirPods Pro 2
+                </h3>
+                <div class="space-y-2 mb-4">
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-palette-line"></i>
+                    </div>
+                    <span>Цвет: белый</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-battery-line"></i>
+                    </div>
+                    <span>Кейс: 520 mAh, зарядка 50 мин</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-headphone-line"></i>
+                    </div>
+                    <span>Наушники: зарядка 15 мин</span>
+                  </div>
+                  <div class="flex items-center text-sm text-gray-600">
+                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                      <i class="ri-star-line"></i>
+                    </div>
+                    <span>состояние: как новые, без следов</span>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <div class="text-2xl font-bold text-gray-900">6 898 ₽</div>
+                  <div class="text-sm text-gray-500 line-through">
+                    24 599 ₽ — в официальных магазинах
+                  </div>
+                </div>
+                <button
+                  onclick="buyProduct('AirPods Pro 2')"
+                  class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-600 transition-colors whitespace-nowrap"
+                >
+                  Купить в WhatsApp
+                </button>
+                <div class="text-xs text-gray-400 text-center mt-1">
+                  Покупая, вы соглашаетесь с <a href="#" onclick="openAgreementModal(); return false;" class="underline">пользовательским соглашением</a> и <a href="#" onclick="openPolicyModal(); return false;" class="underline">политикой обработки данных</a>.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">
+              Почему выбирают нас
+            </h2>
+            <p class="text-lg text-gray-600">
+              Мы гарантируем качество и надёжность каждого устройства
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <div class="w-8 h-8 flex items-center justify-center">
+                  <i class="ri-shield-check-line text-primary text-2xl"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                100% оригинал
+              </h3>
+              <p class="text-gray-600">
+                Только оригинальная техника Apple с официальной гарантией до 12
+                месяцев
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <div class="w-8 h-8 flex items-center justify-center">
+                  <i class="ri-price-tag-line text-secondary text-2xl"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Лучшие цены
+              </h3>
+              <p class="text-gray-600">
+                Экономьте до 30% от розничных цен без потери качества
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <div class="w-8 h-8 flex items-center justify-center">
+                  <i class="ri-customer-service-line text-primary text-2xl"></i>
+                </div>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Быстрая связь
+              </h3>
+              <p class="text-gray-600">
+                Оперативная консультация и оформление заказа через WhatsApp
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-16 bg-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="text-3xl font-bold text-white mb-4">
+            Готовы сделать заказ?
+          </h2>
+          <p class="text-xl text-blue-100 mb-8">
+            Свяжитесь с нами в WhatsApp для быстрого оформления
+          </p>
+          <a
+            href="https://wa.me/79898982042?text=Здравствуйте,%20хочу%20узнать%20подробности%20о%20ваших%20товарах"
+            class="inline-flex items-center bg-white text-primary px-8 py-4 !rounded-button font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap"
+          >
+            <div class="w-6 h-6 flex items-center justify-center mr-3">
+              <i class="ri-whatsapp-line text-xl"></i>
+            </div>
+            Написать в WhatsApp
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer id="contact" class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-xl font-['Pacifico'] text-primary mb-4">iReal</h3>
+            <p class="text-gray-300 mb-4">
+              Оригинальная техника Apple по доступным ценам с гарантией
+              качества.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="https://wa.me/79898982042"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors"
+              >
+                <div class="w-5 h-5 flex items-center justify-center">
+                  <i class="ri-whatsapp-line"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Контакты</h4>
+            <div class="space-y-2">
+              <div class="flex items-center text-gray-300">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                  <i class="ri-phone-line"></i>
+                </div>
+                <span>+7 989 898-20-42</span>
+              </div>
+              <div class="flex items-center text-gray-300">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                  <i class="ri-whatsapp-line"></i>
+                </div>
+                <span>WhatsApp: +7 989 898-20-42</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Гарантии</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li>• Гарантия до 12 месяцев</li>
+              <li>• 100% оригинальная техника</li>
+              <li>• Проверка перед отправкой</li>
+              <li>• Техническая поддержка</li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2025 iReal. Все права защищены.</p>
+        </div>
+      </div>
+    </footer>
+    <script id="navigation">
+      function scrollToProducts() {
+        document.getElementById("products").scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    </script>
+    <script id="whatsapp-integration">
+      function buyProduct(productName) {
+        const phoneNumber = "79898982042";
+        const message = `Здравствуйте, хочу купить ${productName}`;
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, "_blank");
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      document.querySelectorAll('.product-swiper').forEach(function(swiperEl) {
+        new Swiper(swiperEl, {
+          loop: true,
+          pagination: { el: swiperEl.querySelector('.swiper-pagination'), clickable: true },
+          navigation: {
+            nextEl: swiperEl.querySelector('.swiper-button-next'),
+            prevEl: swiperEl.querySelector('.swiper-button-prev'),
+          },
+          slidesPerView: 1,
+          spaceBetween: 0,
+        });
+      });
+    </script>
+    <!-- Модальное окно пользовательского соглашения -->
+    <div id="agreement-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
+      <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative">
+        <button onclick="closeAgreementModal()" class="absolute top-2 right-2 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
+        <h2 class="text-lg font-bold mb-4">Пользовательское соглашение</h2>
+        <div class="text-xs text-gray-700 max-h-64 overflow-y-auto mb-4" style="line-height:1.6">
+          <p><b>1. Общие положения</b><br>
+          1.1. Настоящее соглашение регулирует отношения между продавцом и покупателем по поводу приобретения восстановленных смартфонов Apple iPhone.<br>
+          1.2. Продавец реализует восстановленные устройства, которые могут содержать неоригинальные комплектующие, но полностью работоспособны и прошли проверку.<br>
+          1.3. Продавец вправе называть такие устройства "оригинальными" в части происхождения и качества.<br>
+          1.4. Покупатель, совершая покупку, подтверждает, что ознакомлен с данным фактом и не имеет претензий по этому поводу.<br>
+          1.5. Все товары проходят предпродажную проверку и тестирование.</p>
+          <p><b>2. Описание товара</b><br>
+          2.1. Внешний вид, комплектация и характеристики могут отличаться от новых устройств Apple.<br>
+          2.2. Возможны незначительные следы восстановления, не влияющие на работоспособность.<br>
+          2.3. Информация о товаре предоставляется на сайте и по запросу покупателя.</p>
+          <p><b>3. Гарантии и возврат</b><br>
+          3.1. На устройства предоставляется гарантия до 12 месяцев, если не указано иное.<br>
+          3.2. Возврат и обмен возможен только при наличии существенных дефектов, не связанных с эксплуатацией.<br>
+          3.3. Гарантия не распространяется на повреждения, возникшие по вине покупателя.<br>
+          3.4. Возврат денежных средств осуществляется в течение 10 рабочих дней после возврата товара.<br>
+          3.5. Покупатель обязан сохранить товарный вид и комплектность устройства для возврата.</p>
+          <p><b>4. Ответственность сторон</b><br>
+          4.1. Продавец не несёт ответственности за несовпадение ожиданий покупателя с фактическими характеристиками товара.<br>
+          4.2. Продавец не несёт ответственности за убытки, возникшие в результате неправильной эксплуатации устройства.<br>
+          4.3. Покупатель обязуется использовать устройство по назначению и соблюдать правила эксплуатации.<br>
+          4.4. Продавец не несёт ответственности за невозможность использования товара по причинам, не зависящим от него.</p>
+          <p><b>5. Форс-мажор</b><br>
+          5.1. Стороны освобождаются от ответственности за частичное или полное неисполнение обязательств по настоящему соглашению, если оно явилось следствием обстоятельств непреодолимой силы (форс-мажор).</p>
+          <p><b>6. Порядок рассмотрения претензий</b><br>
+          6.1. Все претензии направляются продавцу в письменной форме по контактам, указанным на сайте.<br>
+          6.2. Продавец рассматривает претензию в течение 10 рабочих дней.<br>
+          6.3. В случае невозможности урегулирования спора стороны вправе обратиться в суд по месту нахождения продавца.</p>
+          <p><b>7. Персональные данные</b><br>
+          7.1. Оформляя заказ, покупатель соглашается на обработку персональных данных для целей оформления и доставки заказа.<br>
+          7.2. Данные не передаются третьим лицам, кроме случаев, предусмотренных законом.<br>
+          7.3. Покупатель вправе запросить удаление или изменение своих персональных данных.</p>
+          <p><b>8. Прочие условия</b><br>
+          8.1. Все споры решаются в соответствии с законодательством РФ.<br>
+          8.2. Совершая покупку, покупатель подтверждает согласие со всеми условиями данного соглашения.<br>
+          8.3. Если вы не согласны с условиями, пожалуйста, не совершайте покупку.</p>
+        </div>
+        <div class="flex justify-end gap-2">
+          <button onclick="closeAgreementModal()" class="px-4 py-2 rounded bg-gray-200 text-gray-700 hover:bg-gray-300">Закрыть</button>
+        </div>
+      </div>
+    </div>
+    <!-- Модальное окно политики обработки данных -->
+    <div id="policy-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
+      <div class="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative">
+        <button onclick="closePolicyModal()" class="absolute top-2 right-2 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
+        <h2 class="text-lg font-bold mb-4">Политика обработки персональных данных</h2>
+        <div class="text-xs text-gray-700 max-h-64 overflow-y-auto mb-4" style="line-height:1.6">
+          <p><b>1. Общие положения</b><br>
+          1.1. Настоящая политика определяет порядок обработки и защиты персональных данных покупателей.<br>
+          1.2. Персональные данные используются исключительно для оформления, оплаты и доставки заказа, а также для обратной связи.<br>
+          1.3. Использование сайта и оформление заказа означает согласие с данной политикой.</p>
+          <p><b>2. Состав персональных данных</b><br>
+          2.1. К персональным данным относятся: ФИО, номер телефона, адрес доставки, email, иные сведения, предоставленные покупателем добровольно.</p>
+          <p><b>3. Цели и способы обработки данных</b><br>
+          3.1. Обработка данных осуществляется для: оформления заказа, связи с покупателем, доставки товара, выполнения гарантийных обязательств, информирования о статусе заказа.<br>
+          3.2. Обработка включает сбор, запись, систематизацию, хранение, уточнение, использование, передачу (только по закону), обезличивание, блокирование и уничтожение данных.</p>
+          <p><b>4. Хранение и защита данных</b><br>
+          4.1. Данные хранятся на защищённых серверах и не передаются третьим лицам, за исключением случаев, предусмотренных законом.<br>
+          4.2. Применяются все необходимые организационные и технические меры для защиты данных от несанкционированного доступа.</p>
+          <p><b>5. Права субъекта персональных данных</b><br>
+          5.1. Покупатель вправе запросить удаление или изменение своих персональных данных, обратившись к продавцу.<br>
+          5.2. Покупатель вправе отозвать согласие на обработку данных, что может повлечь невозможность исполнения заказа.<br>
+          5.3. Покупатель вправе получить информацию о своих данных и способах их обработки.</p>
+          <p><b>6. Сроки хранения и удаление данных</b><br>
+          6.1. Данные хранятся только на период, необходимый для исполнения заказа и гарантийных обязательств.<br>
+          6.2. По истечении срока хранения данные уничтожаются или обезличиваются.</p>
+          <p><b>7. Безопасность</b><br>
+          7.1. Продавец принимает все разумные меры для защиты персональных данных от утраты, неправомерного доступа, изменения или раскрытия.<br>
+          7.2. В случае утечки данных продавец уведомляет покупателя и компетентные органы в установленном законом порядке.</p>
+          <p><b>8. Прочие условия</b><br>
+          8.1. Продавец вправе вносить изменения в настоящую политику без согласия покупателя, уведомляя об этом на сайте.<br>
+          8.2. Все споры решаются в соответствии с законодательством РФ.</p>
+        </div>
+        <div class="flex justify-end gap-2">
+          <button onclick="closePolicyModal()" class="px-4 py-2 rounded bg-gray-200 text-gray-700 hover:bg-gray-300">Закрыть</button>
+        </div>
+      </div>
+    </div>
+    <script id="agreement-modal-script">
+      function openAgreementModal() {
+        document.getElementById('agreement-modal').classList.remove('hidden');
+      }
+      function closeAgreementModal() {
+        document.getElementById('agreement-modal').classList.add('hidden');
+      }
+      function openPolicyModal() {
+        document.getElementById('policy-modal').classList.remove('hidden');
+      }
+      function closePolicyModal() {
+        document.getElementById('policy-modal').classList.add('hidden');
+      }
+    </script>
+  </body>
+</html>
